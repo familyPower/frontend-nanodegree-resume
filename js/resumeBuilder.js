@@ -97,26 +97,20 @@ var bio = {
 
 // header
 header.display = function() {
-  var formattedHeaderName = HTMLheaderName.replace("%data%", bio.name);
-  var formattedHeaderRole = HTMLheaderRole.replace("%data%", bio.role);
-  var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+  var concatContact = HTMLmobile.replace("%data%", bio.contacts.mobile)
+                + HTMLemail.replace("%data%", bio.contacts.email)
+                + HTMLtwitter.replace("%data%", bio.contacts.twitter)
+                + HTMLgithub.replace("%data%", bio.contacts.github);
 
-  var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-  var fromattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-  var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-  var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-  // var formattedBlog = HTMLblog.replace("%data%", bio.contacts.blog);
-  var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-  var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
-  var concatContact = formattedMobile + fromattedEmail + formattedTwitter + formattedGithub;
-
-  $("#header").prepend(formattedHeaderName);
-  $("#name").append(formattedHeaderRole);
+  $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
+  $("#name").append(HTMLheaderRole.replace("%data%", bio.role));
 
   $("#header").append(concatContact);
+  $("#header").append(HTMLlocation.replace("%data%", bio.contacts.location));
 
-  $("#header").append(formattedBioPic);
-  $("#header").append(formattedWelcomeMsg);
+  $("#header").append(HTMLbioPic.replace("%data%", bio.biopic));
+  $("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
+
   $("#header").append(HTMLskillsStart);
 
   for (ndx in bio.skills) {
