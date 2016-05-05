@@ -28,6 +28,11 @@ h6 {
   display: inline;
 }
 
+#skillsItem {
+  display: block;
+  margin-top: 0px;
+}
+
 h1 {
   font-size: 40px;
   color: #f5a623;
@@ -103,6 +108,12 @@ a {
 #skills-h3 {
   color: #f5ae23;
   display: none;
+  margin-bottom: 0px;
+}
+
+#skillsItem {
+  display: block;
+  margin-top: 0px;
 }
 
 .orange {
@@ -153,10 +164,11 @@ a {
   padding: 2.5% 5%;
 }
 
-ul,
-li {
+
+/*ul.contactMethods,
+li.contactMethods {
   list-style-type: none;
-}
+}*/
 
 .biopic {
   float: left;
