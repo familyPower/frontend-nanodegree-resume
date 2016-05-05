@@ -30,7 +30,11 @@ h6 {
 
 #skillsItem {
   display: block;
-  margin-top: 0px;
+}
+
+#skills {
+  padding: 0px;
+  margin: 0px;
 }
 
 h1 {
@@ -108,12 +112,10 @@ a {
 #skills-h3 {
   color: #f5ae23;
   display: none;
-  margin-bottom: 0px;
 }
 
 #skillsItem {
   display: block;
-  margin-top: 0px;
 }
 
 .orange {

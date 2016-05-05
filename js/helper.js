@@ -23,11 +23,13 @@ var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><
 var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
 var HTMLlocation = '<div id="contactLocation" class="row"><li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li></div>';
 
-var HTMLbioPic = '<div class="col-4"><img src="%data%" class="biopic"></div>';
-var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
+// var HTMLbioPicSection = '<div id="bioPicSection" class="row debug_show_all_boundaries"></div>'
+var HTMLbioPic = '<img src="%data%" class="biopic">';
 
+var HTMLrightOfBioPic = '<div id="rightOfBioPic" class=""></div>'
+var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
-var HTMLskills = '<li id="skillsItem" class="flex-item debug_show_all_boundaries" ><span class="white-text">%data%</span></li>';
+var HTMLskills = '<li id="skillsItem"  class="flex-item" ><span class="white-text">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
 var HTMLworkEmployer = '<a href="#">%data%';

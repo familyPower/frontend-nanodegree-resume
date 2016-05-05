@@ -106,16 +106,19 @@ header.display = function() {
   $("#name").append(HTMLheaderRole.replace("%data%", bio.role));
 
   $("#topContacts").append(concatContact);
-  $("#header").append(HTMLlocation.replace("%data%", bio.contacts.location));
+  $("#contactMethods").append(HTMLlocation.replace("%data%", bio.contacts.location));
 
+  // $("#header").append(HTMLbioPicSection);
   $("#header").append(HTMLbioPic.replace("%data%", bio.biopic));
-  $("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
 
-  $("#header").append(HTMLskillsStart);
+  $("#header").append(HTMLrightOfBioPic);
+  $("#rightOfBioPic").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
+
+  $("#rightOfBioPic").append(HTMLskillsStart);
 
   for (ndx in bio.skills) {
     var formattedSkill = HTMLskills.replace("%data%", bio.skills[ndx]);
-    $("#header").append(formattedSkill);
+    $("#rightOfBioPic").append(formattedSkill);
   }
 }
 
