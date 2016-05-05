@@ -58,17 +58,15 @@ var work = {
 
 var portfolio = {
   "projects": [{
-    "title": "title 1",
-    "datesWorked": "d1-d2",
-    "description": "descr 1",
+    "title": "Sample Project 1",
+    "datesWorked": "2014",
+    "description": "Who moved my cheese cheesy feet cauliflower cheese." +
+      "Queso taleggio when the cheese comes out everybody 's happy airdale" +
+      "ricotta cheese and wine paneer camembert de nomandie.Swiss mozzerella" +
+      "cheese slices feta fromage fais airedale swiss cheesecake.Hard cheese" +
+      "blue castello halloumi parmesan say cheese stinking bishop jarlsberg.",
     "images": [
-      "images/197x148.gif"
-    ]
-  }, {
-    "title": "title 2",
-    "datesWorked": "d3-d4",
-    "description": "descr 2",
-    "images": [
+      "images/197x148.gif",
       "images/197x148.gif"
     ]
   }],
@@ -153,7 +151,8 @@ portfolio.display = function() {
       $(".project-entry:last").append(HTMLprojectDescription.replace("%data%", portfolio.projects[ndx].description));
 
       if (portfolio.projects[ndx].images.length > 0) {
-        $(".project-entry:last").append(HTMLprojectImage.replace("%data%", portfolio.projects[ndx].images));
+        for (index in portfolio.projects[ndx].images)
+        $(".project-entry:last").append(HTMLprojectImage.replace("%data%", portfolio.projects[ndx].images[index]));
       }
     }
   }
