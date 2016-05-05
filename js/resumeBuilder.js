@@ -58,17 +58,15 @@ var work = {
 
 var portfolio = {
   "projects": [{
-    "title": "title 1",
-    "datesWorked": "d1-d2",
-    "description": "descr 1",
+    "title": "Sample Project 1",
+    "datesWorked": "2014",
+    "description": "Who moved my cheese cheesy feet cauliflower cheese." +
+      "Queso taleggio when the cheese comes out everybody 's happy airdale" +
+      "ricotta cheese and wine paneer camembert de nomandie.Swiss mozzerella" +
+      "cheese slices feta fromage fais airedale swiss cheesecake.Hard cheese" +
+      "blue castello halloumi parmesan say cheese stinking bishop jarlsberg.",
     "images": [
-      "images/197x148.gif"
-    ]
-  }, {
-    "title": "title 2",
-    "datesWorked": "d3-d4",
-    "description": "descr 2",
-    "images": [
+      "images/197x148.gif",
       "images/197x148.gif"
     ]
   }],
@@ -97,31 +95,28 @@ var bio = {
 
 // header
 header.display = function() {
-  var formattedHeaderName = HTMLheaderName.replace("%data%", bio.name);
-  var formattedHeaderRole = HTMLheaderRole.replace("%data%", bio.role);
-  var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+  var concatContact = HTMLmobile.replace("%data%", bio.contacts.mobile)
+                + HTMLemail.replace("%data%", bio.contacts.email)
+                + HTMLtwitter.replace("%data%", bio.contacts.twitter)
+                + HTMLgithub.replace("%data%", bio.contacts.github);
 
-  var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-  var fromattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-  var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-  var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-  // var formattedBlog = HTMLblog.replace("%data%", bio.contacts.blog);
-  var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-  var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
-  var concatContact = formattedMobile + fromattedEmail + formattedTwitter + formattedGithub;
+  $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
+  $("#name").append(HTMLheaderRole.replace("%data%", bio.role));
 
-  $("#header").prepend(formattedHeaderName);
-  $("#name").append(formattedHeaderRole);
+  $("#topContacts").append(concatContact);
+  $("#contactMethods").append(HTMLlocation.replace("%data%", bio.contacts.location));
 
-  $("#header").append(concatContact);
+  // $("#header").append(HTMLbioPicSection);
+  $("#header").append(HTMLbioPic.replace("%data%", bio.biopic));
 
-  $("#header").append(formattedBioPic);
-  $("#header").append(formattedWelcomeMsg);
-  $("#header").append(HTMLskillsStart);
+  $("#header").append(HTMLrightOfBioPic);
+  $("#rightOfBioPic").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
+
+  $("#rightOfBioPic").append(HTMLskillsStart);
 
   for (ndx in bio.skills) {
     var formattedSkill = HTMLskills.replace("%data%", bio.skills[ndx]);
-    $("#header").append(formattedSkill);
+    $("#rightOfBioPic").append(formattedSkill);
   }
 }
 
@@ -156,7 +151,8 @@ portfolio.display = function() {
       $(".project-entry:last").append(HTMLprojectDescription.replace("%data%", portfolio.projects[ndx].description));
 
       if (portfolio.projects[ndx].images.length > 0) {
-        $(".project-entry:last").append(HTMLprojectImage.replace("%data%", portfolio.projects[ndx].images));
+        for (index in portfolio.projects[ndx].images)
+        $(".project-entry:last").append(HTMLprojectImage.replace("%data%", portfolio.projects[ndx].images[index]));
       }
     }
   }
