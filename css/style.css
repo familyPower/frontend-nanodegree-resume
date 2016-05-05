@@ -135,6 +135,11 @@ a {
   background-color: #484848;
 }
 
+#contactLocation {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 .flex-box {
   display: -webkit-flex;
   display: flex;

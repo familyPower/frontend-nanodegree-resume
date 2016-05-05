@@ -105,7 +105,7 @@ header.display = function() {
   $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
   $("#name").append(HTMLheaderRole.replace("%data%", bio.role));
 
-  $("#header").append(concatContact);
+  $("#topContacts").append(concatContact);
   $("#header").append(HTMLlocation.replace("%data%", bio.contacts.location));
 
   $("#header").append(HTMLbioPic.replace("%data%", bio.biopic));
