@@ -95,10 +95,7 @@ var bio = {
 
 // header
 header.display = function() {
-  var concatContact = HTMLmobile.replace("%data%", bio.contacts.mobile)
-                + HTMLemail.replace("%data%", bio.contacts.email)
-                + HTMLtwitter.replace("%data%", bio.contacts.twitter)
-                + HTMLgithub.replace("%data%", bio.contacts.github);
+  var concatContact = HTMLmobile.replace("%data%", bio.contacts.mobile) + HTMLemail.replace("%data%", bio.contacts.email) + HTMLtwitter.replace("%data%", bio.contacts.twitter) + HTMLgithub.replace("%data%", bio.contacts.github);
 
   $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
   $("#name").append(HTMLheaderRole.replace("%data%", bio.role));
@@ -152,7 +149,7 @@ portfolio.display = function() {
 
       if (portfolio.projects[ndx].images.length > 0) {
         for (index in portfolio.projects[ndx].images)
-        $(".project-entry:last").append(HTMLprojectImage.replace("%data%", portfolio.projects[ndx].images[index]));
+          $(".project-entry:last").append(HTMLprojectImage.replace("%data%", portfolio.projects[ndx].images[index]));
       }
     }
   }
