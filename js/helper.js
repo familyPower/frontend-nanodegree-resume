@@ -21,7 +21,7 @@ var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><sp
 var HTMLtwitter = '<li class="flex-item"><span class="orange-text">twitter</span><span class="white-text">%data%</span></li>';
 var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><span class="white-text">%data%</span></li>';
 var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
-var HTMLlocation = '<div id="contactLocation" class="row"><li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li></div>';
+var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
 
 // var HTMLbioPicSection = '<div id="bioPicSection" class="row debug_show_all_boundaries"></div>'
 var HTMLbioPic = '<img src="%data%" class="biopic">';

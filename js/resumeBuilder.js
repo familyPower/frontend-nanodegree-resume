@@ -47,19 +47,19 @@ var work = {
     "title": "Delivery Boy",
     "location": "wanted to",
     "dates": "1998 - December 31, 1999",
-    "description": "Who moved my cheese cheesy feet cauliflower cheese." +
-      "Queso taleggio when the cheese comes out everybody 's happy airdale" +
-      "ricotta cheese and wine paneer camembert de nomandie.Swiss mozzerella" +
-      "cheese slices feta fromage fais airedale swiss cheesecake.Hard cheese" +
-      "blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
+    "description": "Who moved my cheese cheesy feet cauliflower cheese. \
+      Queso taleggio when the cheese comes out everybody 's happy airdale \
+      ricotta cheese and wine paneer camembert de nomandie.Swiss mozzerella \
+      cheese slices feta fromage fais airedale swiss cheesecake.Hard cheese \
+      blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
   }],
   "display": ""
 };
 
-var portfolio = {
+var projects = {
   "projects": [{
     "title": "Sample Project 1",
-    "datesWorked": "2014",
+    "dates": "2014",
     "description": "Who moved my cheese cheesy feet cauliflower cheese." +
       "Queso taleggio when the cheese comes out everybody 's happy airdale" +
       "ricotta cheese and wine paneer camembert de nomandie.Swiss mozzerella" +
@@ -68,7 +68,7 @@ var portfolio = {
     "images": [
       "images/197x148.gif",
       "images/197x148.gif"
-    ]
+    ],
   }],
   "display": ""
 };
@@ -94,14 +94,15 @@ var bio = {
 ////////////////////////////
 
 // header
-header.display = function() {
-  var concatContact = HTMLmobile.replace("%data%", bio.contacts.mobile) + HTMLemail.replace("%data%", bio.contacts.email) + HTMLtwitter.replace("%data%", bio.contacts.twitter) + HTMLgithub.replace("%data%", bio.contacts.github);
+bio.display = function() {
+  var concatContact = HTMLmobile.replace("%data%", bio.contacts.mobile) + HTMLemail.replace("%data%", bio.contacts.email) + HTMLtwitter.replace("%data%", bio.contacts.twitter) +
+  HTMLgithub.replace("%data%", bio.contacts.github) + HTMLlocation.replace("%data%", bio.contacts.location);
 
   $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
   $("#name").append(HTMLheaderRole.replace("%data%", bio.role));
 
   $("#topContacts").append(concatContact);
-  $("#contactMethods").append(HTMLlocation.replace("%data%", bio.contacts.location));
+  // $("#contactMethods").append(HTMLlocation.replace("%data%", bio.contacts.location));
 
   // $("#header").append(HTMLbioPicSection);
   $("#header").append(HTMLbioPic.replace("%data%", bio.biopic));
@@ -115,6 +116,7 @@ header.display = function() {
     var formattedSkill = HTMLskills.replace("%data%", bio.skills[ndx]);
     $("#rightOfBioPic").append(formattedSkill);
   }
+  $("#footerContacts").append(concatContact);
 }
 
 // work
@@ -138,18 +140,18 @@ work.display = function() {
   }
 }
 
-// portfolio
-portfolio.display = function() {
-  for (ndx in portfolio.projects) {
-    if (portfolio.projects.hasOwnProperty(ndx)) {
+// projects
+projects.display = function() {
+  for (ndx in projects.projects) {
+    if (projects.projects.hasOwnProperty(ndx)) {
       $("#projects").append(HTMLprojectStart);
-      $(".project-entry:last").append(HTMLprojectTitle.replace("%data%", portfolio.projects[ndx].title));
-      $(".project-entry:last").append(HTMLprojectDates.replace("%data%", portfolio.projects[ndx].datesWorked));
-      $(".project-entry:last").append(HTMLprojectDescription.replace("%data%", portfolio.projects[ndx].description));
+      $(".project-entry:last").append(HTMLprojectTitle.replace("%data%", projects.projects[ndx].title));
+      $(".project-entry:last").append(HTMLprojectDates.replace("%data%", projects.projects[ndx].datesWorked));
+      $(".project-entry:last").append(HTMLprojectDescription.replace("%data%", projects.projects[ndx].description));
 
-      if (portfolio.projects[ndx].images.length > 0) {
-        for (index in portfolio.projects[ndx].images)
-          $(".project-entry:last").append(HTMLprojectImage.replace("%data%", portfolio.projects[ndx].images[index]));
+      if (projects.projects[ndx].images.length > 0) {
+        for (index in projects.projects[ndx].images)
+          $(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.projects[ndx].images[index]));
       }
     }
   }
@@ -187,7 +189,7 @@ function displayMap() {
 /////////////////////
 // Bio
 /////////////////////
-header.display();
+bio.display();
 
 /////////////////////
 // Work Experience
@@ -197,7 +199,7 @@ work.display();
 /////////////////////
 // Portfolio
 /////////////////////
-portfolio.display();
+projects.display();
 
 /////////////////////
 // Education
