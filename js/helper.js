@@ -1,9 +1,6 @@
 /*
-
 This file contains all of the code running in the background that makes resumeBuilder.js possible. We call these helper functions because they support your code in this course.
-
 Don't worry, you'll learn what's going on in this file throughout the course. You won't need to make any changes to it until you start experimenting with inserting a Google Map in Problem Set 3.
-
 Cameron Pittman
 */
 
@@ -23,13 +20,11 @@ var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><
 var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
 var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
 
-// var HTMLbioPicSection = '<div id="bioPicSection" class="row debug_show_all_boundaries"></div>'
 var HTMLbioPic = '<img src="%data%" class="biopic">';
-
-var HTMLrightOfBioPic = '<div id="rightOfBioPic" class=""></div>'
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
+
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
-var HTMLskills = '<li id="skillsItem"  class="flex-item" ><span class="white-text">%data%</span></li>';
+var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
 var HTMLworkEmployer = '<a href="#">%data%';
@@ -64,12 +59,11 @@ var googleMap = '<div id="map"></div>';
 /*
 The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
 */
-// iName renamed to iName1 to resolve conflict with same name in Bootstrap.
 $(document).ready(function() {
   $('button').click(function() {
     var $name = $('#name');
-    var iName1 = inName($name.text()) || function(){};
-    $name.html(iName1);
+    var iName = inName($name.text()) || function(){};
+    $name.html(iName);
   });
 });
 
@@ -247,6 +241,6 @@ window.addEventListener('load', initializeMap);
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
 window.addEventListener('resize', function(e) {
-  // Make sure the map bounds get updated on page resize
+  //Make sure the map bounds get updated on page resize
  map.fitBounds(mapBounds);
 });
