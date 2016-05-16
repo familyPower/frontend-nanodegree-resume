@@ -110,20 +110,20 @@ bio.display = function() {
   // welcome message
   $("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
 
-    // skills
+  // skills
   $("#header").append(HTMLskillsStart);
 
   var cnt = bio.skills.length;
   console.log("count skills=" + cnt);
   if (cnt > 0) {
-  for (ndx = 0; ndx < cnt; ndx++) {
-    var formattedSkill = HTMLskills.replace("%data%", bio.skills[ndx]);
-    console.log("formattedSkill=" + formattedSkill);
-    if (formattedSkill.length > 0) {
-      $("#skills").append(HTMLskills.replace("%data%", formattedSkill));
+    for (ndx = 0; ndx < cnt; ndx++) {
+      var formattedSkill = HTMLskills.replace("%data%", bio.skills[ndx]);
+      console.log("formattedSkill=" + formattedSkill);
+      if (formattedSkill.length > 0) {
+        $("#skills").append(HTMLskills.replace("%data%", formattedSkill));
+      }
     }
   }
-}
   // $("#header").append(HTMLrightOfBioPic);
   // $("#rightOfBioPic").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
   //
