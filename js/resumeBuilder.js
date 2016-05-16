@@ -37,21 +37,21 @@ var work = {
     "title": "Delivery Boy",
     "location": "wanted to",
     "dates": "January 3000 - Future",
-    "description": "Who moved my cheese cheesy feet cauliflower cheese. \
-      Queso taleggio when the cheese comes out everybody 's happy airdale \
-      ricotta cheese and wine paneer camembert de nomandie.Swiss mozzerella \
-      cheese slices feta fromage fais airedale swiss cheesecake.Hard cheese \
-      blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
+    "description": "Who moved my cheese cheesy feet cauliflower cheese." +
+      "Queso taleggio when the cheese comes out everybody 's happy airdale" +
+      "ricotta cheese and wine paneer camembert de nomandie.Swiss mozzerella" +
+      "cheese slices feta fromage fais airedale swiss cheesecake.Hard cheese" +
+      "blue castello halloumi parmesan say cheese stinking bishop jarlsberg.",
   }, {
     "employer": "Panucci's Pizza",
     "title": "Delivery Boy",
     "location": "wanted to",
     "dates": "1998 - December 31, 1999",
-    "description": "Who moved my cheese cheesy feet cauliflower cheese. \
-      Queso taleggio when the cheese comes out everybody 's happy airdale \
-      ricotta cheese and wine paneer camembert de nomandie.Swiss mozzerella \
-      cheese slices feta fromage fais airedale swiss cheesecake.Hard cheese \
-      blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
+    "description": "Who moved my cheese cheesy feet cauliflower cheese." +
+      "Queso taleggio when the cheese comes out everybody 's happy airdale" +
+      "ricotta cheese and wine paneer camembert de nomandie.Swiss mozzerella" +
+      "cheese slices feta fromage fais airedale swiss cheesecake.Hard cheese" +
+      "blue castello halloumi parmesan say cheese stinking bishop jarlsberg.",
   }],
   "display": function(){}
 };
@@ -107,16 +107,16 @@ bio.display = function() {
   // $("#header").append(HTMLbioPicSection);
   $("#header").append(HTMLbioPic.replace("%data%", bio.biopic));
 
-  $("#header").append(HTMLrightOfBioPic);
-  $("#rightOfBioPic").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
-
-  $("#rightOfBioPic").append(HTMLskillsStart);
-
-  for (ndx in bio.skills) {
-    var formattedSkill = HTMLskills.replace("%data%", bio.skills[ndx]);
-    $("#rightOfBioPic").append(formattedSkill);
-  }
-  $("#footerContacts").append(concatContact);
+  // $("#header").append(HTMLrightOfBioPic);
+  // $("#rightOfBioPic").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
+  //
+  // $("#rightOfBioPic").append(HTMLskillsStart);
+  //
+  // for (ndx in bio.skills) {
+  //   var formattedSkill = HTMLskills.replace("%data%", bio.skills[ndx]);
+  //   $("#rightOfBioPic").append(formattedSkill);
+  // }
+  // $("#footerContacts").append(concatContact);
 }
 
 // work
