@@ -28,7 +28,7 @@ var education = {
     "date": "2014",
     "url": "http://www.udacity.com/course/ud804"
   }],
-  "display": function(){}
+  "display": function() {}
 };
 
 var work = {
@@ -53,7 +53,7 @@ var work = {
       "cheese slices feta fromage fais airedale swiss cheesecake.Hard cheese" +
       "blue castello halloumi parmesan say cheese stinking bishop jarlsberg.",
   }],
-  "display": function(){}
+  "display": function() {}
 };
 
 var projects = {
@@ -70,7 +70,7 @@ var projects = {
       "images/197x148.gif"
     ],
   }],
-  "display": function(){}
+  "display": function() {}
 };
 
 var bio = {
@@ -86,7 +86,7 @@ var bio = {
   "welcomeMessage": "lorem ipsum dolor sit amet etc etc etc.",
   "skills": ["awesomeness", "delivering things", "cryogenic sleep", "saving the universe"],
   "biopic": "images/fry.jpg",
-  "display": function(){}
+  "display": function() {}
 };
 
 ////////////////////////////
@@ -96,7 +96,7 @@ var bio = {
 // header
 bio.display = function() {
   var concatContact = HTMLmobile.replace("%data%", bio.contacts.mobile) + HTMLemail.replace("%data%", bio.contacts.email) + HTMLtwitter.replace("%data%", bio.contacts.twitter) +
-  HTMLgithub.replace("%data%", bio.contacts.github) + HTMLlocation.replace("%data%", bio.contacts.location);
+    HTMLgithub.replace("%data%", bio.contacts.github) + HTMLlocation.replace("%data%", bio.contacts.location);
 
   $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
   $("#name").append(HTMLheaderRole.replace("%data%", bio.role));
@@ -104,9 +104,26 @@ bio.display = function() {
   $("#topContacts").append(concatContact);
   // $("#contactMethods").append(HTMLlocation.replace("%data%", bio.contacts.location));
 
-  // $("#header").append(HTMLbioPicSection);
+  // picture
   $("#header").append(HTMLbioPic.replace("%data%", bio.biopic));
 
+  // welcome message
+  $("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
+
+    // skills
+  $("#header").append(HTMLskillsStart);
+
+  var cnt = bio.skills.length;
+  console.log("count skills=" + cnt);
+  if (cnt > 0) {
+  for (ndx = 0; ndx < cnt; ndx++) {
+    var formattedSkill = HTMLskills.replace("%data%", bio.skills[ndx]);
+    console.log("formattedSkill=" + formattedSkill);
+    if (formattedSkill.length > 0) {
+      $("#skills").append(HTMLskills.replace("%data%", formattedSkill));
+    }
+  }
+}
   // $("#header").append(HTMLrightOfBioPic);
   // $("#rightOfBioPic").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
   //
@@ -157,21 +174,33 @@ projects.display = function() {
   }
 }
 
+// "onlineCourses": [{
+//   "title": "javascript Crash Course",
+//   "school": "Udacity",
+//   "date": "2014",
+//   "url": "http://www.udacity.com/course/ud804"
+// }],
+
 // education
 education.display = function() {
   $("#education").append(HTMLschoolStart);
 
   for (ndx in education.schools) {
-    $(".education-entry:last").append(HTMLschoolName.replace("%data%", education.schools[ndx].name));
-    $(".education-entry:last").append(HTMLschoolDegree.replace("%data%", education.schools[ndx].degree));
+    $(".education-entry:last").append(HTMLschoolName.replace("%data%", education.schools[ndx].name) + HTMLschoolDegree.replace("%data%", education.schools[ndx].degree));
+    // $(".education-entry:last").append(HTMLschoolDegree.replace("%data%", education.schools[ndx].degree));
     $(".education-entry:last").append(HTMLschoolDates.replace("%data%", education.schools[ndx].dates));
     $(".education-entry:last").append(HTMLschoolLocation.replace("%data%", education.schools[ndx].location));
     $(".education-entry:last").append(HTMLschoolMajor.replace("%data%", education.schools[ndx].majors));
   }
+
+  $("#education").append(HTMLonlineClasses);
   for (ndx in education.onlineCourses) {
-    $(".education-entry:last").append(HTMLonlineClasses);
-    $(".education-entry:last").append(HTMLonlineTitle.replace("%data%", education.onlineCourses[ndx].title));
-    $(".education-entry:last").append(HTMLonlineSchool.replace("%data%", education.onlineCourses[ndx].school));
+    var courseSchool = HTMLonlineTitle.replace("%data%", education.onlineCourses[ndx].title) + HTMLonlineSchool.replace("%data%", education.onlineCourses[ndx].school);
+    $("#education").append(HTMLschoolStart);
+    $(".education-entry:last").append(courseSchool);
+
+    // $("#education").append(HTMLonlineTitle.replace("%data%", education.onlineCourses[ndx].title));
+    // $("#education").append(HTMLonlineSchool.replace("%data%", education.onlineCourses[ndx].school));
     $(".education-entry:last").append(HTMLonlineDates.replace("%data%", education.onlineCourses[ndx].date));
     $(".education-entry:last").append(HTMLonlineURL.replace("%data%", education.onlineCourses[ndx].url));
   }
