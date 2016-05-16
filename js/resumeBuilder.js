@@ -28,7 +28,7 @@ var education = {
     "date": "2014",
     "url": "http://www.udacity.com/course/ud804"
   }],
-  "display": ""
+  "display": function(){}
 };
 
 var work = {
@@ -53,7 +53,7 @@ var work = {
       cheese slices feta fromage fais airedale swiss cheesecake.Hard cheese \
       blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
   }],
-  "display": ""
+  "display": function(){}
 };
 
 var projects = {
@@ -70,7 +70,7 @@ var projects = {
       "images/197x148.gif"
     ],
   }],
-  "display": ""
+  "display": function(){}
 };
 
 var bio = {
@@ -86,7 +86,7 @@ var bio = {
   "welcomeMessage": "lorem ipsum dolor sit amet etc etc etc.",
   "skills": ["awesomeness", "delivering things", "cryogenic sleep", "saving the universe"],
   "biopic": "images/fry.jpg",
-  "display": ""
+  "display": function(){}
 };
 
 ////////////////////////////
